@@ -1,10 +1,10 @@
 public class ejercicio4 {
   public static void main (String []args ){
   
-    double cantidadeneuros;
+    double cantidadEnEuros;
 
     System.out.print ("Introducir una cantidad en euros: ");
-    cantidadEnEuros = Integer.parseInt (System.console().readLine());
+    cantidadEnEuros = Double.parseDouble (System.console().readLine());
   
     double total;
     total = (cantidadEnEuros * 166.386);
