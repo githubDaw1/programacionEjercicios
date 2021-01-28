@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio35 {
   public static void main (String[] args) {
 
-    int numeroDigitos = 1;
+    int numeroDigitos = 0;
 
     Scanner scanner = new Scanner (System.in);
 
@@ -18,43 +18,25 @@ public class ejercicio35 {
   public static String convierteEnPalotes (int numeroIntroducido, int cantidadDigitos) {
 
     int digito;
-    String digitoResultante = "";
     String numero = String.valueOf (numeroIntroducido);
+    String caracter;
+    String digitoResultante = "";
 
     for (int i = 0; i < cantidadDigitos; i++) {
 
-      String caracter  = Character.toString (numero.charAt(i));
+      caracter  = Character.toString (numero.charAt(i));
       digito = Integer.parseInt (caracter);
 
       for (int j = 0; j < digito + 1; j++) {
 
         if (j < digito) {
-          System.out.print ("*");
+          System.out.print ("|");
         }
 
         else {
-
-          if (i < cantidadDigitos) {
-
-            if (i == cantidadDigitos - 1 && digito == 0) {
-              System.out.print("0 ");
-            }
-
-            else if (i == cantidadDigitos - 1 && digito != 0) {
-            }
-
-            if (i < cantidadDigitos - 1 && digito == 0) {
-              System.out.print("0 ");
-            }
-
-            if (i < cantidadDigitos - 1 && digito != 0) {
-              System.out.print("| ");
-            }
-          }
+          System.out.print ("- ");
         }
       }
-
-      System.out.print ("");
     }
 
     return digitoResultante;
@@ -86,9 +68,10 @@ public class ejercicio35 {
 
       else if (numeroIntroducido < 10) {
         ++numeroDigitos;
+        numeroIntroducido = numeroIntroducido / 10;
       }
 
-    } while (numeroIntroducido > 10);
+    } while (numeroIntroducido > 0);
 
     return numeroDigitos;
   }
