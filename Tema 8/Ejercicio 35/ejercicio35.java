@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import Ejercicio35.ejercicio35;
 
 public class ejercicio35 {
   public static void main (String[] args) {
