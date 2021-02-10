@@ -12,93 +12,49 @@ public class ejercicio45 {
       altura = scanner.nextInt ();
     }
 
-    String[][] filasFigura = (dibujaFigura (altura));
-
-    for (int i = 0; i < altura; i++) {
-
-      for (int j = 0; j < altura + 2; j++) {
-        System.out.print (filasFigura[i][j]);
-      }
-
-      System.out.println();
-    }
+    dibujaFigura (altura);
   }
 
-  public static String[][] dibujaFigura (int altura) {
+  public static void dibujaFigura (int altura) {
 
     int cantidadCaracteres1 = 0;
     int cantidadCaracteres2 = 0;
-    String[][] linea = new String [altura][(2 * altura) + 2];
-    String[][] fila = new String[altura][(2 * altura) + 2];
-    int j;
-    int cantidadEspacios;
+    String[][] caracteres1 = new String [altura][altura];
+    String[][] caracteres2 = new String [altura][altura];
+    int j = 0;
+    String[][] figura1 = new String [altura][altura];
+    String[][] figura2 = new String[altura][altura];
+    int cantidadEspacios = altura + (altura - 3);
+    String[][] espacios = new String[altura][altura];
 
-    if (altura == 3) {
+    for (int i = 0; i < altura; i++) {
 
-      cantidadEspacios = altura;
+      ++cantidadCaracteres1;
 
-      for (int i = 0; i < altura; i++) {
-
-        ++cantidadCaracteres1;
+      if (cantidadCaracteres2 < altura - 1) {
         ++cantidadCaracteres2;
-
-        j = 0;
-
-        for (int c1 = 0; c1 < cantidadCaracteres1; c1++) {
-          linea[i][c1] = "*";
-          fila[i][j] = linea[i][c1];
-          j++;
-        }
-
-        for (int e = 0; e < cantidadEspacios; e++) {
-          linea[i][e] = "-";
-          fila[i][j] = linea[i][e];
-          j++;
-        }
-
-        cantidadEspacios -= 2;
-
-        for (int c2 = 0; c2 < cantidadCaracteres2; c2++) {
-          linea[i][c2] = "*";
-          fila[i][j] = linea[i][c2];
-          j++;
-        }
       }
-    }
 
-    else if (altura > 3) {
-
-      cantidadEspacios = altura + 2;
-
-      for (int i = 0; i < altura; i++) {
-
-        ++cantidadCaracteres1;
-        ++cantidadCaracteres2;
-
-        j = 0;
-
-        for (int c1 = 0; c1 < cantidadCaracteres1; c1++) {
-          linea[i][c1] = "*";
-          fila[i][j] = linea[i][c1];
-          j++;
-        }
-
-        for (int e = 0; e < cantidadEspacios; e++) {
-          linea[i][e] = "-";
-          fila[i][j] = linea[i][e];
-          j++;
-        }
-
-        cantidadEspacios -= 2;
-
-        for (int c2 = 0; c2 < cantidadCaracteres2; c2++) {
-          linea[i][c2] = "*";
-          fila[i][j] = linea[i][c2];
-          j++;
-        }
+      for (int c1 = 0; c1 < cantidadCaracteres1; c1++) {
+        System.out.print ("*");
+        j++;
       }
-    }
 
-    return fila;
+      for (int e = 0; e < cantidadEspacios; e++) {
+        System.out.print ("-");
+        j++;
+      }
+
+      cantidadEspacios -= 2;
+
+      for (int c2 = 0; c2 < cantidadCaracteres2; c2++) {
+        System.out.print ("*");
+        j++;
+      }
+
+      System.out.println ();
+
+      j = 0;
+    }
   }
 }
