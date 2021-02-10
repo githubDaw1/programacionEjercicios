@@ -41,7 +41,7 @@ public class ejercicio45 {
       }
 
       for (int e = 0; e < cantidadEspacios; e++) {
-        System.out.print ("-");
+        System.out.print (" ");
         j++;
       }
 
