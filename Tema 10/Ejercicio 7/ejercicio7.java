@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class ejercicio7 {
-  public static void main(String[] args) {
+  public static void main (String[] args) {
 
     ArrayList <Moneda> monedero = new ArrayList <Moneda> ();
 
     Moneda aux;
 
     aux = new Moneda ();
-    monedero.add(aux);
+    monedero.add (aux);
 
     for (int i = 0; i < 5; i++) {
 

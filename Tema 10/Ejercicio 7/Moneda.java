@@ -39,8 +39,7 @@ public class Moneda {
 
   public String dameValor () {
 
-    String resultado;
-    resultado = "" + this.valor;
+    String resultado = "" + this.valor;
 
     if (this.tipo == true) {
       resultado += " centimos";
@@ -49,6 +48,7 @@ public class Moneda {
     else {
       resultado += " euros";
     }
+
     return resultado;
   }
 
